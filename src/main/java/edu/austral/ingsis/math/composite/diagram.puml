@@ -1,0 +1,55 @@
+@startuml
+
+CompoundOperation o-> Operation
+
+interface Operation {
+    + evaluate()
+}
+
+class CompoundOperation implements Operation {
+    - List<Operation> operations
+}
+
+class Sum implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class Subtract implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class Product implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class Divide implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class power implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class SquareRoot implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+class Mod implements Operation {
+    - Operation operation1
+    - Operation operation2
+    + evaluate()
+}
+
+@enduml
