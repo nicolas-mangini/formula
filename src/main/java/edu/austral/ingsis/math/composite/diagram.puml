@@ -1,55 +1,77 @@
 @startuml
 
-CompoundOperation o-> Operation
-
-interface Operation {
-    + evaluate()
+interface Function {
+    + Double evaluate()
 }
 
-class CompoundOperation implements Operation {
-    - List<Operation> operations
+/'basic elements'/
+class Variable implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
 }
 
-class Sum implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Number implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
 }
 
-class Subtract implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+/'compound'/
+class Sum implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
+    + String toString()
 }
 
-class Product implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Sub implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
+    + String toString()
 }
 
-class Divide implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Mul implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
+    + String toString()
 }
 
-class power implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Div implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
+    + String toString()
 }
 
-class SquareRoot implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Pow implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate()
+    + String toString()
 }
 
-class Mod implements Operation {
-    - Operation operation1
-    - Operation operation2
-    + evaluate()
+class Sqrt implements Function {
+    - Function element
+
+    + Double evaluate()
+    + String toString()
+}
+
+class Mod implements Function {
+    - Function element
+
+    + Double evaluate()
+    + String toString()
 }
 
 @enduml
