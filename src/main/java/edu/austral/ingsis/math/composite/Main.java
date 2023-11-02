@@ -4,6 +4,7 @@ import edu.austral.ingsis.math.composite.child.Number;
 import edu.austral.ingsis.math.composite.child.Variable;
 import edu.austral.ingsis.math.composite.operations.Mod;
 import edu.austral.ingsis.math.composite.operations.Sum;
+import edu.austral.ingsis.math.visitor.behaviours.PrinterVisitor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,5 +20,6 @@ public class Main {
         Map<String, Double> map = new HashMap<>();
         map.put("x", 3d);
         System.out.println(function1.evaluate(map));
+
     }
 }

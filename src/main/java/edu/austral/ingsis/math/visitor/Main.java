@@ -12,18 +12,19 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         PrinterVisitor printerVisitor = new PrinterVisitor();
-        Function function = new Sum(new Number(3.0), new Number(4.0));
-        System.out.println(printerVisitor.print(function));
-
-        Function function2 = new Pow(new Sum(new Number(3.0), new Variable("x")), new Mod(new Number(-5.0)));
-        System.out.println(printerVisitor.print(function2));
-
         VariableListerVisitor variableListerVisitor = new VariableListerVisitor();
-        System.out.println(variableListerVisitor.listVariables(function2));
+        EvaluateVisitor evaluateVisitor = new EvaluateVisitor(new HashMap<>());
+
+        Function function = new Sum(new Number(3d), new Number(22d));
+        System.out.println(printerVisitor.print(function));
+        System.out.println(evaluateVisitor.evaluate(function));
+
+        Function function1 = new Sum(new Mod(new Number(-9d)), new Variable("x"));
+        System.out.println(printerVisitor.print(function1));
 
         Map<String, Double> map = new HashMap<>();
         map.put("x", 3d);
-        EvaluateVisitor evaluateVisitor = new EvaluateVisitor(map);
-        System.out.println(evaluateVisitor.evaluate(function2));
+        EvaluateVisitor evaluateVisitor2 = new EvaluateVisitor(map);
+        System.out.println(evaluateVisitor2.evaluate(function1));
     }
 }
