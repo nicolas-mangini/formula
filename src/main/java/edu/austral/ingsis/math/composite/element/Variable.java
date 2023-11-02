@@ -2,10 +2,10 @@ package edu.austral.ingsis.math.composite.element;
 
 import edu.austral.ingsis.math.composite.Function;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 
 public class Variable implements Function {
     private final String variable;
@@ -17,7 +17,7 @@ public class Variable implements Function {
     @Override
     public Double evaluate(Map<String, Double> variables) {
         if (variables.containsKey(variable))
-        return variables.get(variable);
+            return variables.get(variable);
         else throw new RuntimeException("Variable " + variable + " not found");
     }
 
@@ -27,7 +27,7 @@ public class Variable implements Function {
     }
 
     @Override
-    public List<String> listVariables(List<String> variables) {
-        return Stream.concat(variables.stream(), Stream.of(variable)).toList();
+    public Set<String> listVariables(Set<String> variables) {
+        return Stream.concat(variables.stream(), Stream.of(variable)).collect(Collectors.toSet());
     }
 }

@@ -2,9 +2,8 @@ package edu.austral.ingsis.math.composite.element;
 
 import edu.austral.ingsis.math.composite.Function;
 
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
+import java.util.Set;
 
 public class Number implements Function {
     private final Double value;
@@ -24,7 +23,7 @@ public class Number implements Function {
     }
 
     @Override
-    public List<String> listVariables(List<String> variables) {
+    public Set<String> listVariables(Set<String> variables) {
         return variables;
     }
 }

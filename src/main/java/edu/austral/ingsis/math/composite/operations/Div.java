@@ -2,8 +2,9 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Div implements Function {
@@ -26,10 +27,11 @@ public class Div implements Function {
     }
 
     @Override
-    public List<String> listVariables(List<String> variables) {
-        List<String> dividendVariables = dividend.listVariables(variables);
-        List<String> divisorVariables = divisor.listVariables(variables);
+    public Set<String> listVariables(Set<String> variables) {
+        Set<String> dividendVariables = dividend.listVariables(variables);
+        Set<String> divisorVariables = divisor.listVariables(variables);
 
-        return Stream.concat(dividendVariables.stream(), divisorVariables.stream()).toList();
+        return Stream.concat(dividendVariables.stream(), divisorVariables.stream())
+                .collect(Collectors.toSet());
     }
 }

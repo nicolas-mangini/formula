@@ -2,8 +2,9 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Sum implements Function {
@@ -26,10 +27,11 @@ public class Sum implements Function {
     }
 
     @Override
-    public List<String> listVariables(List<String> variables) {
-        List<String> leftVariables = left.listVariables(variables);
-        List<String> rightVariables = right.listVariables(variables);
+    public Set<String> listVariables(Set<String> variables) {
+        Set<String> leftVariables = left.listVariables(variables);
+        Set<String> rightVariables = right.listVariables(variables);
 
-        return Stream.concat(leftVariables.stream(), rightVariables.stream()).toList();
+        return Stream.concat(leftVariables.stream(), rightVariables.stream())
+                .collect(Collectors.toSet());
     }
 }

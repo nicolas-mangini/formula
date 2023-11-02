@@ -2,8 +2,9 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Sqrt implements Function {
@@ -24,7 +25,8 @@ public class Sqrt implements Function {
     }
 
     @Override
-    public List<String> listVariables(List<String> variables) {
-        return Stream.concat(variables.stream(), Stream.of(radicand.print())).toList();
+    public Set<String> listVariables(Set<String> variables) {
+        return Stream.concat(variables.stream(), Stream.of(radicand.print()))
+                .collect(Collectors.toSet());
     }
 }
