@@ -1,7 +1,7 @@
 package edu.austral.ingsis.math;
 
 import edu.austral.ingsis.math.composite.Function;
-import edu.austral.ingsis.math.composite.element.Number;
+import edu.austral.ingsis.math.composite.child.Number;
 import edu.austral.ingsis.math.composite.operations.*;
 import org.junit.Test;
 

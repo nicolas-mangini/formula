@@ -1,4 +1,4 @@
-package edu.austral.ingsis.math.composite.element;
+package edu.austral.ingsis.math.composite.child;
 
 import edu.austral.ingsis.math.composite.Function;
 

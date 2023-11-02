@@ -1,10 +1,8 @@
 package edu.austral.ingsis.math.composite;
 
-import edu.austral.ingsis.math.composite.element.Number;
-import edu.austral.ingsis.math.composite.element.Variable;
+import edu.austral.ingsis.math.composite.child.Number;
+import edu.austral.ingsis.math.composite.child.Variable;
 import edu.austral.ingsis.math.composite.operations.Mod;
-import edu.austral.ingsis.math.composite.operations.Mul;
-import edu.austral.ingsis.math.composite.operations.Pow;
 import edu.austral.ingsis.math.composite.operations.Sum;
 
 import java.util.HashMap;

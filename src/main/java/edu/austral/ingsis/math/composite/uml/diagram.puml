@@ -1,0 +1,87 @@
+@startuml
+
+Sum o--> Function
+Sub o--> Function
+Mul o--> Function
+Div o--> Function
+Pow o--> Function
+Sqrt o--> Function
+Mod o--> Function
+
+interface Function {
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+    + Set<String> listVariables(Set<String> variables);
+}
+
+/'basic elements'/
+class Variable implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+}
+
+class Number implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+}
+
+/'compound'/
+class Sum implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Sub implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Mul implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Div implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Pow implements Function {
+    - Function function1
+    - Function function2
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Sqrt implements Function {
+    - Function element
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+class Mod implements Function {
+    - Function element
+
+    + Double evaluate(Map<String, Double> variables);
+    + String print();
+}
+
+@enduml
