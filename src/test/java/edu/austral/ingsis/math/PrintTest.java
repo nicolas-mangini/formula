@@ -1,5 +1,8 @@
 package edu.austral.ingsis.math;
 
+import edu.austral.ingsis.math.composite.element.Number;
+import edu.austral.ingsis.math.composite.element.Variable;
+import edu.austral.ingsis.math.composite.operations.*;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -12,8 +15,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction1() {
-        final String expected = "1 + 6";
-        final String result = expected;
+        final String expected = "(1.0 + 6.0)";
+        final String result = new Sum(new Number(1.0), new Number(6.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -23,8 +26,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction2() {
-        final String expected = "12 / 2";
-        final String result = expected;
+        final String expected = "(12.0 / 2.0)";
+        final String result = new Div(new Number(12.0), new Number(2.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -34,8 +37,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction3() {
-        final String expected = "(9 / 2) * 3";
-        final String result = expected;
+        final String expected = "((9.0 / 2.0) * 3.0)";
+        final String result = new Mul(new Div(new Number(9.0), new Number(2.0)), new Number(3.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -45,8 +48,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction4() {
-        final String expected = "(27 / 6) ^ 2";
-        final String result = expected;
+        final String expected = "((27.0 / 6.0) ^ 2.0)";
+        final String result = new Pow(new Div(new Number(27.0), new Number(6.0)), new Number(2.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -56,8 +59,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction6() {
-        final String expected = "|value| - 8";
-        final String result = expected;
+        final String expected = "(|value| - 8.0)";
+        final String result = new Sub(new Mod(new Variable("value")), new Number(8.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -67,8 +70,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction7() {
-        final String expected = "|value| - 8";
-        final String result = expected;
+        final String expected = "(|value| - 8.0)";
+        final String result = new Sub(new Mod(new Variable("value")), new Number(8.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -78,8 +81,8 @@ public class PrintTest {
      */
     @Test
     public void shouldPrintFunction8() {
-        final String expected = "(5 - i) * 8";
-        final String result = expected;
+        final String expected = "((5.0 - i) * 8.0)";
+        final String result = new Mul(new Sub(new Number(5.0), new Variable("i")), new Number(8.0)).print();
 
         assertThat(result, equalTo(expected));
     }

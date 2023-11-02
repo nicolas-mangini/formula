@@ -2,6 +2,8 @@ package edu.austral.ingsis.math.composite.element;
 
 import edu.austral.ingsis.math.composite.Function;
 
+import java.util.Map;
+
 
 public class Variable implements Function {
     private final String variable;
@@ -11,12 +13,14 @@ public class Variable implements Function {
     }
 
     @Override
-    public Double evaluate() {
-        return null;
+    public Double evaluate(Map<String, Double> variables) {
+        if (variables.containsKey(variable))
+        return variables.get(variable);
+        else throw new RuntimeException("Variable " + variable + " not found");
     }
 
-    @Override
-    public String toString() {
+
+    public String print() {
         return this.variable;
     }
 }

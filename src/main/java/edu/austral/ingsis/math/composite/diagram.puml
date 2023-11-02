@@ -25,7 +25,7 @@ class Sum implements Function {
     - Function function2
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Sub implements Function {
@@ -33,7 +33,7 @@ class Sub implements Function {
     - Function function2
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Mul implements Function {
@@ -41,7 +41,7 @@ class Mul implements Function {
     - Function function2
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Div implements Function {
@@ -49,7 +49,7 @@ class Div implements Function {
     - Function function2
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Pow implements Function {
@@ -57,21 +57,21 @@ class Pow implements Function {
     - Function function2
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Sqrt implements Function {
     - Function element
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 class Mod implements Function {
     - Function element
 
     + Double evaluate()
-    + String toString()
+    + String print()
 }
 
 @enduml

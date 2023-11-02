@@ -2,6 +2,8 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
+import java.util.Map;
+
 public class Sqrt implements Function {
     private final Function element;
 
@@ -10,12 +12,11 @@ public class Sqrt implements Function {
     }
 
     @Override
-    public Double evaluate() {
-        return Math.sqrt(element.evaluate());
+    public Double evaluate(Map<String, Double> variables) {
+        return Math.sqrt(element.evaluate(variables));
     }
 
-    @Override
-    public String toString() {
-        return "sqrt(" + element.toString() + ")";
+    public String print() {
+        return "sqrt(" + element.print() + ")";
     }
 }

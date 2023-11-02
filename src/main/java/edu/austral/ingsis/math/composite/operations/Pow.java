@@ -2,6 +2,8 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
+import java.util.Map;
+
 public class Pow implements Function {
     private final Function function1;
     private final Function function2;
@@ -12,12 +14,11 @@ public class Pow implements Function {
     }
 
     @Override
-    public Double evaluate() {
-        return Math.pow(function1.evaluate(), function2.evaluate());
+    public Double evaluate(Map<String, Double> variables) {
+        return Math.pow(function1.evaluate(variables), function2.evaluate(variables));
     }
 
-    @Override
-    public String toString() {
-        return "(" + function1.toString() + " ^ " + function2.toString() + ")";
+    public String print() {
+        return "(" + function1.print() + " ^ " + function2.print() + ")";
     }
 }

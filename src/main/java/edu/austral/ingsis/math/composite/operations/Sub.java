@@ -2,6 +2,8 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
+import java.util.Map;
+
 public class Sub implements Function {
     private final Function left;
     private final Function right;
@@ -12,12 +14,11 @@ public class Sub implements Function {
     }
 
     @Override
-    public Double evaluate() {
-        return left.evaluate() - right.evaluate();
+    public Double evaluate(Map<String, Double> variables) {
+        return left.evaluate(variables) - right.evaluate(variables);
     }
 
-    @Override
-    public String toString() {
-        return "(" + left.toString() + " - " + right.toString() + ")";
+    public String print() {
+        return "(" + left.print() + " - " + right.print() + ")";
     }
 }
