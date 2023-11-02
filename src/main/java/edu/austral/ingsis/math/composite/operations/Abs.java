@@ -7,10 +7,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class abs implements Function {
+public class Abs implements Function {
     private final Function function;
 
-    public abs(Function function) {
+    public Abs(Function function) {
         this.function = function;
     }
 

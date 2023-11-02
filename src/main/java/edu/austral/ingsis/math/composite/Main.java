@@ -2,7 +2,7 @@ package edu.austral.ingsis.math.composite;
 
 import edu.austral.ingsis.math.composite.child.Number;
 import edu.austral.ingsis.math.composite.child.Variable;
-import edu.austral.ingsis.math.composite.operations.abs;
+import edu.austral.ingsis.math.composite.operations.Abs;
 import edu.austral.ingsis.math.composite.operations.Sum;
 
 import java.util.HashMap;
@@ -14,7 +14,7 @@ public class Main {
         System.out.println(function.print());
         System.out.println(function.evaluate(new HashMap<>()));
 
-        Function function1 = new Sum(new abs(new Number(-9d)), new Variable("x"));
+        Function function1 = new Sum(new Abs(new Number(-9d)), new Variable("x"));
         System.out.println(function1.print());
         Map<String, Double> map = new HashMap<>();
         map.put("x", 3d);

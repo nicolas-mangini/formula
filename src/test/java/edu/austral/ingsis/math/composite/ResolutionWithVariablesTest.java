@@ -87,7 +87,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction6() {
         Map<String, Double> map = new HashMap<>();
         map.put("value", 8.0);
-        final Function function = new Sub(new abs(new Variable("value")), new Number(8.0));
+        final Function function = new Sub(new Abs(new Variable("value")), new Number(8.0));
         final Double result = function.evaluate(map);
 
         assertThat(result, equalTo(0d));
@@ -100,7 +100,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction7() {
         Map<String, Double> map = new HashMap<>();
         map.put("value", 8.0);
-        final Function function = new Sub(new abs(new Variable("value")), new Number(8.0));
+        final Function function = new Sub(new Abs(new Variable("value")), new Number(8.0));
         final Double result = function.evaluate(map);
 
         assertThat(result, equalTo(0d));

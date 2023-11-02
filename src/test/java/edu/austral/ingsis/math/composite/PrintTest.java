@@ -60,7 +60,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction6() {
         final String expected = "(|value| - 8.0)";
-        final String result = new Sub(new abs(new Variable("value")), new Number(8.0)).print();
+        final String result = new Sub(new Abs(new Variable("value")), new Number(8.0)).print();
 
         assertThat(result, equalTo(expected));
     }
@@ -71,7 +71,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction7() {
         final String expected = "(|value| - 8.0)";
-        final String result = new Sub(new abs(new Variable("value")), new Number(8.0)).print();
+        final String result = new Sub(new Abs(new Variable("value")), new Number(8.0)).print();
 
         assertThat(result, equalTo(expected));
     }
