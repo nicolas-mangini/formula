@@ -1,5 +1,6 @@
 package edu.austral.ingsis.math.composite;
 
+import java.util.List;
 import java.util.Map;
 
 public interface Function {
@@ -7,4 +8,5 @@ public interface Function {
 
     String print();
 
+    List<String> listVariables(List<String> variables);
 }

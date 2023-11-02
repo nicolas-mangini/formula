@@ -2,23 +2,34 @@ package edu.austral.ingsis.math.composite.operations;
 
 import edu.austral.ingsis.math.composite.Function;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Sum implements Function {
-    private final Function function1;
-    private final Function function2;
+    private final Function left;
+    private final Function right;
 
-    public Sum(Function function1, Function function2) {
-        this.function1 = function1;
-        this.function2 = function2;
+    public Sum(Function left, Function right) {
+        this.left = left;
+        this.right = right;
     }
 
     @Override
     public Double evaluate(Map<String, Double> variables) {
-        return function1.evaluate(variables) + function2.evaluate(variables);
+        return left.evaluate(variables) + right.evaluate(variables);
     }
 
+    @Override
     public String print() {
-        return "(" + function1.print() + " + " + function2.print() + ")";
+        return "(" + left.print() + " + " + right.print() + ")";
+    }
+
+    @Override
+    public List<String> listVariables(List<String> variables) {
+        List<String> leftVariables = left.listVariables(variables);
+        List<String> rightVariables = right.listVariables(variables);
+
+        return Stream.concat(leftVariables.stream(), rightVariables.stream()).toList();
     }
 }
