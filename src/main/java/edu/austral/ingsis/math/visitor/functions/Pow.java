@@ -1,8 +1,6 @@
-package edu.austral.ingsis.math.visitor.operations;
+package edu.austral.ingsis.math.visitor.functions;
 
 import edu.austral.ingsis.math.visitor.*;
-
-import java.util.Map;
 
 public class Pow implements Function {
     private final Function base;
@@ -14,13 +12,8 @@ public class Pow implements Function {
     }
 
     @Override
-    public Double evaluate(Map<String, Double> variables) {
-        return Math.pow(base.evaluate(variables), exponent.evaluate(variables));
-    }
-
-    @Override
-    public String accept(FunctionVisitor functionVisitor) {
-        return functionVisitor.visitPow(this);
+    public <T> T accept(Visitor<T> visitor) {
+        return visitor.visitPow(this);
     }
 
     public Function getBase() {

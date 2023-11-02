@@ -1,8 +1,6 @@
-package edu.austral.ingsis.math.visitor.operations;
+package edu.austral.ingsis.math.visitor.functions;
 
 import edu.austral.ingsis.math.visitor.*;
-
-import java.util.Map;
 
 public class Sum implements Function {
     private final Function left;
@@ -14,13 +12,8 @@ public class Sum implements Function {
     }
 
     @Override
-    public Double evaluate(Map<String, Double> variables) {
-        return left.evaluate(variables) + right.evaluate(variables);
-    }
-
-    @Override
-    public String accept(FunctionVisitor functionVisitor) {
-        return functionVisitor.visitSum(this);
+    public <T> T accept(Visitor<T> visitor) {
+        return visitor.visitSum(this);
     }
 
     public Function getLeft() {

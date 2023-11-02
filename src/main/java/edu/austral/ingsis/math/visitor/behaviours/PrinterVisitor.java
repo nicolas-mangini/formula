@@ -1,34 +1,14 @@
-package edu.austral.ingsis.math.visitor;
+package edu.austral.ingsis.math.visitor.behaviours;
 
-import edu.austral.ingsis.math.visitor.child.Number;
-import edu.austral.ingsis.math.visitor.child.Variable;
-import edu.austral.ingsis.math.visitor.operations.*;
+import edu.austral.ingsis.math.visitor.Function;
+import edu.austral.ingsis.math.visitor.Visitor;
+import edu.austral.ingsis.math.visitor.functions.Number;
+import edu.austral.ingsis.math.visitor.functions.Variable;
+import edu.austral.ingsis.math.visitor.functions.*;
 
-public class PrinterFunctionVisitor implements FunctionVisitor {
+public class PrinterVisitor implements Visitor<String> {
     public String print(Function function) {
         return function.accept(this);
-
-/*        if (function instanceof Number) {
-            return visit((Number) function);
-        } else if (function instanceof Variable) {
-            return visit((Variable) function);
-        } else if (function instanceof Sum) {
-            return visit((Sum) function);
-        } else if (function instanceof Sub) {
-            return visit((Sub) function);
-        } else if (function instanceof Mul) {
-            return visit((Mul) function);
-        } else if (function instanceof Div) {
-            return visit((Div) function);
-        } else if (function instanceof Pow) {
-            return visit((Pow) function);
-        } else if (function instanceof Sqrt) {
-            return visit((Sqrt) function);
-        } else if (function instanceof Mod) {
-            return visit((Mod) function);
-        } else {
-            throw new RuntimeException("Unknown function type");
-        }*/
     }
 
     @Override

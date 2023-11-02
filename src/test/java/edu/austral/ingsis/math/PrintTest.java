@@ -1,8 +1,10 @@
 package edu.austral.ingsis.math;
 
+import edu.austral.ingsis.math.composite.Function;
 import edu.austral.ingsis.math.composite.child.Number;
 import edu.austral.ingsis.math.composite.child.Variable;
 import edu.austral.ingsis.math.composite.operations.*;
+import edu.austral.ingsis.math.visitor.behaviours.PrinterVisitor;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -16,7 +18,8 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction1() {
         final String expected = "(1.0 + 6.0)";
-        final String result = new Sum(new Number(1.0), new Number(6.0)).print();
+        final Function function = new Sum(new Number(1.0), new Number(6.0));
+        final String result = function.print();
 
         assertThat(result, equalTo(expected));
     }

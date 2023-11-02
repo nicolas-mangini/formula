@@ -1,8 +1,6 @@
-package edu.austral.ingsis.math.visitor.operations;
+package edu.austral.ingsis.math.visitor.functions;
 
 import edu.austral.ingsis.math.visitor.*;
-
-import java.util.Map;
 
 public class Div implements Function {
     private final Function dividend;
@@ -14,13 +12,8 @@ public class Div implements Function {
     }
 
     @Override
-    public Double evaluate(Map<String, Double> variables) {
-        return dividend.evaluate(variables) / divisor.evaluate(variables);
-    }
-
-    @Override
-    public String accept(FunctionVisitor functionVisitor) {
-        return functionVisitor.visitDiv(this);
+    public <T> T accept(Visitor<T> visitor) {
+        return visitor.visitDiv(this);
     }
 
     public Function getDividend() {
