@@ -7,10 +7,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Mod implements Function {
+public class abs implements Function {
     private final Function function;
 
-    public Mod(Function function) {
+    public abs(Function function) {
         this.function = function;
     }
 

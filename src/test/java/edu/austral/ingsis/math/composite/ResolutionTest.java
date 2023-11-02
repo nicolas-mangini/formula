@@ -64,7 +64,7 @@ public class ResolutionTest {
      */
     @Test
     public void shouldResolveSimpleFunction6() {
-        final Function function = new Mod(new Number(136.0));
+        final Function function = new abs(new Number(136.0));
         final Double result = function.evaluate(null);
         assertThat(result, equalTo(136d));
     }
@@ -74,7 +74,7 @@ public class ResolutionTest {
      */
     @Test
     public void shouldResolveSimpleFunction7() {
-        final Function function = new Mod(new Number(-136.0));
+        final Function function = new abs(new Number(-136.0));
         final Double result = function.evaluate(null);
         assertThat(result, equalTo(136d));
     }
